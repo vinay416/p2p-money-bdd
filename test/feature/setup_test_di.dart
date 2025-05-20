@@ -7,7 +7,8 @@ import 'package:fintech_p2p_money/feature/p2p_money/presentation/bloc/p2p_money_
 import 'package:fintech_p2p_money/inject_dependency.dart';
 import 'package:mockito/annotations.dart';
 
-import 'p2p_money/setup_test_di.mocks.dart';
+import 'setup_test_di.mocks.dart';
+
 
 @GenerateMocks([Dio])
 
