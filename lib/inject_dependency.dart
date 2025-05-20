@@ -1,14 +1,12 @@
-	
 import 'package:fintech_p2p_money/inject_dependency.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-final getIt = GetIt.instance;  
-  
-@InjectableInit(  
-  initializerName: 'init', // default  
-  preferRelativeImports: true, // default  
-  asExtension: true, // default  
-)  
+final getIt = GetIt.instance;
 
-Future<void> configureDependencies() async => getIt.init();
+@InjectableInit(
+  initializerName: 'init', // default
+  preferRelativeImports: true, // default
+  asExtension: true, // default
+)
+Future<void> configureDependencies() async => await getIt.init();

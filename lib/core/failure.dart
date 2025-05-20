@@ -15,3 +15,11 @@ class PaymentFailure extends Failure {
   @override
   List<Object> get props => [properties, msg];
 }
+
+class ServerFailure extends Failure {
+  final String msg;
+  const ServerFailure(this.msg);
+
+  @override
+  List<Object> get props => [properties, msg];
+}

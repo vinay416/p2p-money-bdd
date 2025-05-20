@@ -1,4 +1,5 @@
 import 'package:fintech_p2p_money/feature/p2p_money/presentation/bloc/p2p_money_bloc.dart';
+import 'package:fintech_p2p_money/feature/transaction_history/presentation/page/transaction_history_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,7 +24,21 @@ class _P2pMoneyPageState extends State<P2pMoneyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Transfer")),
+      appBar: AppBar(
+        title: Text("Transfer"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => TransactionHistoryPage(),
+                ),
+              );
+            },
+            icon: Icon(Icons.history),
+          ),
+        ],
+      ),
       body: Center(
         child: BlocBuilder<P2pMoneyBloc, P2pMoneyState>(
           buildWhen: (previous, current) => current is! P2pMoneyLoading,
