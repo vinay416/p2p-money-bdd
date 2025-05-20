@@ -1,0 +1,29 @@
+name: fintech_p2p_money
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.7
+  dartz: ^0.10.1
+  dio: ^5.8.0+1
+  flutter_bloc: ^9.1.1
+  get_it: ^8.0.3
+  injectable: ^2.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  bdd_widget_test: ^1.8.1
+  build_runner: ^2.4.15
+  injectable_generator: ^2.7.0
+  mockito: ^5.4.6
+
+flutter:
+  uses-material-design: true
