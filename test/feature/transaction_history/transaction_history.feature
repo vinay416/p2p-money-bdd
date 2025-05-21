@@ -15,20 +15,20 @@ Feature: Transaction history
 
     Scenario: Changed the Filter to Sent
         Given Showing List of Transactions
-        When I tap {"Filter"} text
-        And I tap {"Sent"} text
+        When I tap {Icons.filter_alt} icon
+        And I tap {"sent"} text
         Then I see list of {"Sent"} Transactions
 
     Scenario: Changed the Filter to Received
         Given Showing List of Transactions 
-        When I tap {"Filter"} text
-        And I tap {"Received"} text
+        When I tap {Icons.filter_alt} icon
+        And I tap {"received"} text
         Then I see list of {"Received"} Transactions  
 
     Scenario: Changed the Filter to All
         Given Showing List of Transactions 
-        When I tap {"Filter"} text
-        And I tap {"All"} text
+        When I tap {Icons.filter_alt} icon
+        And I tap {"all"} text
         Then I see list of {"Sent/Received"} Transactions 
 
     # Scenario: Selected Filter is Sent

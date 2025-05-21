@@ -28,11 +28,10 @@ class TransactionHistoryBloc
 
   FutureOr<void> _onChangeFilter(event, emit) async {
     final response = await changeFilterTransactionsUsecase.call(event.filter);
-    final state = response.fold(
+    response.fold(
       (failure) {},
-      (history) => TransactionHistoryData(history),
+      (history) => emit(TransactionHistoryData(history)),
     );
-    emit(state);
   }
 
   FutureOr<void> _onPaginate(PaginateHistory event, emit) async {

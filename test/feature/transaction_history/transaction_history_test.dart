@@ -10,6 +10,7 @@ import './step/i_see_list_of_transactions.dart';
 import './step/showing_list_of_transactions.dart';
 import './step/i_scroll_to_end_of_list.dart';
 import './step/i_see_more_transactions.dart';
+import './step/i_tap_icon.dart';
 import './step/i_tap_text.dart';
 
 void main() {
@@ -34,22 +35,22 @@ void main() {
     testWidgets('''Changed the Filter to Sent''', (tester) async {
       await bddSetUp(tester);
       await showingListOfTransactions(tester);
-      await iTapText(tester, "Filter");
-      await iTapText(tester, "Sent");
+      await iTapIcon(tester, Icons.filter_alt);
+      await iTapText(tester, "sent");
       await iSeeListOfTransactions(tester, "Sent");
     });
     testWidgets('''Changed the Filter to Received''', (tester) async {
       await bddSetUp(tester);
       await showingListOfTransactions(tester);
-      await iTapText(tester, "Filter");
-      await iTapText(tester, "Received");
+      await iTapIcon(tester, Icons.filter_alt);
+      await iTapText(tester, "received");
       await iSeeListOfTransactions(tester, "Received");
     });
     testWidgets('''Changed the Filter to All''', (tester) async {
       await bddSetUp(tester);
       await showingListOfTransactions(tester);
-      await iTapText(tester, "Filter");
-      await iTapText(tester, "All");
+      await iTapIcon(tester, Icons.filter_alt);
+      await iTapText(tester, "all");
       await iSeeListOfTransactions(tester, "Sent/Received");
     });
   });

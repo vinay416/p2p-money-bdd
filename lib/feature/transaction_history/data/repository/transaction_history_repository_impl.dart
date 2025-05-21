@@ -22,8 +22,10 @@ class TransactionHistoryRepositoryImpl implements TransactionHistoryRepository {
     try {
       await transactionHistoryLocalSource.setFilter(filter);
       final history = await transactionHistoryRemoteDataSource.fetch();
-      final transactions =
-          history.transactions.where((e) => e == filter.name).toList();
+      List<String> transactions = history.transactions;
+      if (filter != TransactionFilter.all) {
+        history.transactions.where((e) => e == filter.name).toList();
+      }
       return Right(TransactionHistoryEntity(transactions: transactions));
     } catch (e) {
       return Left(ServerFailure("Error occured"));

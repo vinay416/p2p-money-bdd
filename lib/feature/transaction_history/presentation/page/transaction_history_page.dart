@@ -42,6 +42,7 @@ class _TransactionHistoryPageState extends State<TransactionHistoryPage> {
         title: Text("History"),
         actions: [
           PopupMenuButton<TransactionFilter>(
+            icon: Icon(Icons.filter_alt),
             itemBuilder: (context) {
               return TransactionFilter.values
                   .map((e) => PopupMenuItem(value: e, child: Text(e.name)))
